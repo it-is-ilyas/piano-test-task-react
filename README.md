@@ -1,46 +1,105 @@
-# Getting Started with Create React App
+# React frontend task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Мастер добавления заказов
 
-## Available Scripts
+Необходимо реализовать мастер добавления заказов с использованием React.
 
-In the project directory, you can run:
+Ограничения:
 
-### `yarn start`
+- Не использовать css-фреймворки.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Подготовка
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Создать форк репозитория [https://github.com/two-legs/piano-test-task-react](https://github.com/two-legs/piano-test-task-react)
+2. В папке src/api находится mock-реализация api, которую нужно использовать при разработке мастера.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Мастер создания заказов
 
-### `yarn build`
+Дизайн в figma с флоу мастера:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D0%253A1%26viewport%3D204%252C305%252C0.4454238712787628](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D0%253A1%26viewport%3D204%252C305%252C0.4454238712787628)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Main screen
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Отображает список заказов и кнопку вызова мастера.
 
-### `yarn eject`
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A2](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A2)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Terms of delivery
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Отображает условия доставки и чекбокс для их принятия.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Следующий шаг недоступен, пока соглашение не принято.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A494](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A494)
 
-## Learn More
+### Name
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Два поля с именем пользователя. Валидация - поля не должны быть пустыми.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A877](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A877)
+
+### Shipping options
+
+Шаг с ветвлением. Можно выбрать два варианта:
+
+- Courier delivery
+- Pickup points
+
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A955](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A955)
+
+### Pickup points
+
+Асинхронно загружаемый список пунктов самовывоза.
+
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1028](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1028)
+
+### *Courier delivery*. Address
+
+Поля для ввода адреса. Валидация - поля не должны быть пустыми.
+
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1078](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1078)
+
+### *Courier delivery*. Phone number
+
+Поле ввода номера телефона. Валидация - поля не должны быть пустыми и содержать только цифры. После ввода номер отправляется на сервер.
+
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1138](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1138)
+
+### *Courier delivery*. Confirm phone
+
+Поле для подтверждения номера из четырех символов. Валидация проходит асинхронно на сервере.
+
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1402](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1402)
+
+### Confirm order
+
+Отображает summary для мастера. При клике на submit отправляет данные на бэкенд.
+
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1477](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1477)
+
+### Result
+
+Результат создания заказа (успех/не успех). Если успешный - в этом случае заказ добавляется в список.
+
+Успех:
+
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1523](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1523)
+
+Ошибка:
+
+[https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1607](https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2ifwkkhfcVuRFoXyT2Ujeo%2FFrontend-test%3Fnode-id%3D1%253A1607)
+
+## Требования
+
+### Обязательные
+
+- [ ]  Компонента мастера должна быть универсальной - необходимо максимально упростить создание новых мастеров и добавление/изменение текущего мастера.
+- [ ]  Верстка должна соответствовать figma.
+- [ ]  Валидация форм (простая).
+
+### Дополнительно
+
+- [ ]  Анимация переходов между состояниями.
+- [ ]  Маска/валидация поля для номера телефона.
