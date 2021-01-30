@@ -1,0 +1,44 @@
+.Checkbox {
+    display: flex;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 13px;
+    cursor: pointer;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked + .Checkbox__control {
+            img {
+                transform: scale(1);
+            }
+        }
+    }
+
+    &__control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        border-radius: 1px;
+        border: 1px solid rgba($color: #141b24, $alpha: 0.2);
+        margin-right: 14px;
+
+        img {
+            transform: scale(0);
+        }
+    }
+
+    &--disabled {
+        cursor: default;
+        opacity: 0.7;
+    }
+}

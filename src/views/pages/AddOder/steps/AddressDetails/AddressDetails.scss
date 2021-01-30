@@ -1,0 +1,11 @@
+.AddressDetails {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+
+    label {
+        margin-top: 8px;
+        margin-bottom: 18px;
+    }
+}

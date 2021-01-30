@@ -1,0 +1,94 @@
+.Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 30px;
+    font-family: "Open Sans", sans-serif;
+    outline: none;
+    border: 0;
+    border-radius: 4px;
+
+    color: #fff;
+
+    transition: background-color 0.3s;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+// Circle
+.Button--circle {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #fff;
+
+    img {
+        opacity: 0.4;
+    }
+
+    &:hover {
+        img {
+            opacity: 1;
+        }
+    }
+}
+
+// Types
+.Button--type-rounded {
+    border-radius: 38px;
+}
+
+// Sizes
+.Button--size-default {
+    height: 40px;
+}
+
+.Button--size-small {
+    height: 30px;
+
+    &.Button--type-rounded {
+        padding-right: 9px;
+        padding-left: 13px;
+    }
+}
+
+.Button--size-big {
+    height: 60px;
+}
+
+// Colors
+.Button--color-primary {
+    background: linear-gradient(180deg, #5778b2 0%, #4e70ad 100%);
+    color: #ffffff;
+
+    &:hover:not(.Button--disabled) {
+        background: linear-gradient(180deg, #5271a8 0%, #4a6aa3 100%);
+    }
+
+    &.Button--disabled {
+        background: linear-gradient(180deg, #c3cee0 0%, #bac6db 100%);
+    }
+}
+
+.Button--color-secondary {
+    background: linear-gradient(180deg, #e1e4e6 0%, #d8dbe1 100%);
+    color: #0a0e12;
+
+    &:hover:not(.Button--disabled) {
+        background: linear-gradient(180deg, #dbe0e3 0%, #d2d5dd 100%);
+    }
+
+    &.Button--disabled {
+        background: linear-gradient(180deg, #e1e4e6 0%, #d8dbe1 100%);
+        color: rgba($color: #0a0e12, $alpha: 0.5);
+    }
+}
+
+.Button--disabled {
+    &:hover {
+        cursor: default !important;
+    }
+}

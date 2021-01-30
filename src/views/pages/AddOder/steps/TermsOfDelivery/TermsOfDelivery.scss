@@ -1,0 +1,21 @@
+.Terms {
+    display: flex;
+    flex-direction: column;
+
+    &__text {
+        margin: 0;
+        padding: 20px;
+        background-color: #fff;
+        color: var(--type-secondary);
+        line-height: 24px;
+        white-space: pre-wrap;
+    }
+
+    &__checkbox {
+        height: 60px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid rgba(20, 27, 36, 0.05);
+    }
+}

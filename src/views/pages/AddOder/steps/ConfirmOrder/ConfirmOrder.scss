@@ -1,0 +1,18 @@
+.ConfirmOrder {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    &__value-row {
+        display: flex;
+        align-items: center;
+        height: 24px;
+        margin: 3px 0;
+    }
+
+    &__key-field {
+        color: var(--type-secondary);
+        width: 180px;
+    }
+}

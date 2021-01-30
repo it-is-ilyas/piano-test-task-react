@@ -1,0 +1,51 @@
+.AddOrder {
+    width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fbfcfc;
+    border-radius: 4px;
+    box-shadow: 0px 20px 80px rgba(10, 14, 18, 0.1);
+
+    &__close-button {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+    }
+
+    &__header {
+        display: flex;
+        background: linear-gradient(180deg, #f9fafa 0%, #f3f4f5 100%);
+        padding: 20px 0;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+
+    &__headline {
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+    &__headline-subtitle {
+        margin-top: 10px;
+        color: var(--type-secondary);
+    }
+
+    &__body {
+        display: flex;
+        width: 100%;
+    }
+
+    &__footer {
+        height: 80px;
+        padding: 20px;
+        display: flex;
+        justify-content: flex-end;
+        border-top: 1px solid rgba(20, 27, 36, 0.05);
+
+        button {
+            margin-left: 20px;
+        }
+    }
+}

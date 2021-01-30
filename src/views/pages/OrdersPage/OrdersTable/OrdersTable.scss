@@ -1,0 +1,36 @@
+.OrdersTable {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 900px;
+
+    th,
+    td {
+        padding-left: 20px;
+    }
+
+    &__header-row {
+        border-bottom: 1px solid rgba(20, 27, 36, 0.1);
+
+        th {
+            font-weight: normal;
+            color: var(--type-secondary);
+            text-align: left;
+            padding-bottom: 18px;
+        }
+    }
+
+    &__row {
+        height: 60px;
+        cursor: pointer;
+
+        border-top: 1px solid rgba(20, 27, 36, 0.1);
+
+        &:hover {
+            & + tr {
+                border: 0;
+            }
+            box-shadow: 0px 15px 40px rgba(10, 14, 18, 0.1);
+            border: 0;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.PickupPoints {
+    width: 100%;
+    min-height: 150px;
+    padding: 20px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    label {
+        margin-bottom: 12px;
+    }
+}

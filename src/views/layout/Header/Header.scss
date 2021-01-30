@@ -1,0 +1,33 @@
+.Header {
+    width: 100%;
+    height: 50px;
+    padding-left: 17px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+
+    &__logo-container {
+        display: flex;
+        align-items: center;
+        color: var(--type-main);
+    }
+
+    &__logo-img {
+        margin-right: 17px;
+    }
+
+    &__add-order-button {
+        margin-left: auto;
+
+        img {
+            margin-left: 23px;
+            opacity: 0.6;
+        }
+
+        &:hover {
+            img {
+                opacity: 1;
+            }
+        }
+    }
+}
