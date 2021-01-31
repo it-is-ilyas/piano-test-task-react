@@ -1,6 +1,7 @@
 import Input from "components/Input";
 import React, { ChangeEvent, useContext } from "react";
 import { FormContext } from "../../AddOder";
+import { FormFieldType } from "../../types";
 
 import "./PersonalInfo.scss";
 
@@ -13,7 +14,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    updateField(name, value);
+    updateField(name as keyof FormFieldType, value);
   };
   return (
     <div className="PersonalInfo">

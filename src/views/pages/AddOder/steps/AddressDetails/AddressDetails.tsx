@@ -1,6 +1,7 @@
 import Input from "components/Input";
 import React, { ChangeEvent, useContext } from "react";
 import { FormContext } from "../../AddOder";
+import { FormFieldType } from "../../types";
 
 import "./AddressDetails.scss";
 
@@ -13,7 +14,8 @@ const AddressDetails: React.FC<AddressDetailsProps> = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    updateField(name, value);
+
+    updateField(name as keyof FormFieldType, value);
   };
 
   return (

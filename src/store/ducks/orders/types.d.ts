@@ -4,7 +4,7 @@ export enum DeliveryType {
 }
 
 export type OrderType = {
-  id: number;
+  id: string;
   firstName: string;
   secondName: string;
   deliveryOption: DeliveryType;

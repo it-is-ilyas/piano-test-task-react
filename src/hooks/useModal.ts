@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-const useModal = (initialState = false): [boolean, () => void] => {
-  const [isOpen, setOpen] = useState(initialState);
+const useModal = (initialState: boolean = false): [boolean, () => void] => {
+  const [isOpen, setOpen] = useState<boolean>(initialState);
 
-  function toggle() {
+  function toggle(): void {
     setOpen((prevState) => !prevState);
   }
 

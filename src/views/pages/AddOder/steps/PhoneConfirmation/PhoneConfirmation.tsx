@@ -5,6 +5,7 @@ import { infoIcon } from "assets/icons";
 
 import "./PhoneConfirmation.scss";
 import { FormContext } from "../../AddOder";
+import { FormFieldType } from "../../types";
 
 export interface PhoneConfirmationProps {}
 
@@ -15,7 +16,7 @@ const PhoneConfirmation: React.FC<PhoneConfirmationProps> = () => {
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    updateField(name, value);
+    updateField(name as keyof FormFieldType, value);
   };
 
   return (

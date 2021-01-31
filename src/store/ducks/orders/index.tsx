@@ -1,5 +1,6 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
 import Api from "api";
+import { RootState } from "store";
 
 import { OrderType } from "./types";
 
@@ -31,10 +32,10 @@ const orderSlice = createSlice({
 
 const { addNewOrderSuccess, addNewOrderFailure } = orderSlice.actions;
 
-export const ordersSelector = (state) => state.orders;
+export const ordersSelector = (state: RootState) => state.orders;
 
 export const createOrder = (data: OrderType) => async (
-  dispatch
+  dispatch: Dispatch
 ): Promise<any> => {
   try {
     await Api.createOrder(data);

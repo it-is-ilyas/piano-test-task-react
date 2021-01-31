@@ -15,17 +15,17 @@ Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit
 const TermsOfDelivery: React.FC<TermsOfDeliveryProps> = () => {
   const { values, updateField } = useContext(FormContext);
 
-  const { accepted } = values;
+  const { isTermsAccepted } = values;
 
   const toggleTerms = () => {
-    updateField("accepted", !accepted);
+    updateField("isTermsAccepted", !isTermsAccepted);
   };
 
   return (
     <div className="Terms">
       <p className="Terms__text"> {text}</p>
       <div className="Terms__checkbox">
-        <Checkbox checked={accepted} onChange={toggleTerms}>
+        <Checkbox checked={isTermsAccepted} onChange={toggleTerms}>
           I accept the terms of delivery
         </Checkbox>
       </div>

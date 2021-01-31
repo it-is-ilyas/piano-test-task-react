@@ -9,7 +9,7 @@ import "./PickupPoints.scss";
 export interface PickupPointsProps {}
 
 const PickupPoints: React.FC<PickupPointsProps> = () => {
-  const [options, setOptions] = useState([]);
+  const [options, setOptions] = useState<string[]>([]);
   const [isLoading, setLoadingState] = useState(true);
 
   const getPoints = async () => {
@@ -32,8 +32,8 @@ const PickupPoints: React.FC<PickupPointsProps> = () => {
   const { pickupPoint } = values;
 
   const handleOptionChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    updateField(name, value);
+    const { value } = e.target;
+    updateField("pickupPoint", value);
   };
 
   return (

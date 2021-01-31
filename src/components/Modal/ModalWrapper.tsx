@@ -4,20 +4,20 @@ import classNames from "classnames";
 
 import "./Modal.scss";
 
-export const WRAPPER_ID = "modal-wrapper";
+export const WRAPPER_ID: string = "modal-wrapper";
 // const WRAPPER_CLASS_NAME = "modal-wrapper";
 
 type ModalWrapperProps = {
   isOpen: boolean;
   children: ReactNode;
-  toggle: () => void;
+  // toggle: () => void;
   className: string;
 };
 
 const ModalWrapper: React.FC<ModalWrapperProps> = ({
   isOpen = false,
   children = null,
-  toggle,
+  // toggle,
   className = "",
 }) => {
   //   const handleWrapperClick = (e) => {

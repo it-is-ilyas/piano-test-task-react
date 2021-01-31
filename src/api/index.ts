@@ -50,7 +50,7 @@ export default class Api {
   static async createOrder<T>(data: T): Promise<T> {
     await randomDelay();
 
-    if (probability(1)) {
+    if (probability(0.1)) {
       throw new Error("Your order was not created because something broke.");
     }
 

@@ -19,7 +19,7 @@ const Modal: React.FC<ModalProps> = ({
   className,
 }) => {
   return (
-    <ModalWrapper toggle={toggle} isOpen={isOpen} className={className}>
+    <ModalWrapper isOpen={isOpen} className={className}>
       <div className="modal modal--modal">{children}</div>
     </ModalWrapper>
   );

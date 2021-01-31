@@ -4,6 +4,7 @@ import RadioButton from "components/RadioButton";
 import "./DeliveryOptions.scss";
 import { DeliveryType } from "store/ducks/orders/types.d";
 import { FormContext } from "../../AddOder";
+import { FormFieldType } from "../../types";
 
 export interface DeliveryOptionsProps {}
 
@@ -14,7 +15,7 @@ const DeliveryOptions: React.FC<DeliveryOptionsProps> = () => {
 
   const handleOptionChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    updateField(name, value);
+    updateField(name as keyof FormFieldType, value);
   };
 
   return (

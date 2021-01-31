@@ -26,6 +26,7 @@ const Button: FC<ButtonProps> = ({
   htmlType = "button",
   children,
   disabled = false,
+  style = {},
 
   ...props
 }) => {
@@ -44,6 +45,7 @@ const Button: FC<ButtonProps> = ({
       {...props}
       disabled={disabled}
       type={htmlType}
+      style={style}
     >
       {children}
     </button>

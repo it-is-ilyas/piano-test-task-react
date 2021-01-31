@@ -1,6 +1,7 @@
 import Input from "components/Input";
 import React, { ChangeEvent, useContext } from "react";
 import { FormContext } from "../../AddOder";
+import { FormFieldType } from "../../types";
 
 import "./PhoneNumber.scss";
 
@@ -13,7 +14,7 @@ const PhoneNumber: React.FC<PhoneNumberProps> = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    updateField(name, value);
+    updateField(name as keyof FormFieldType, value);
   };
 
   return (
