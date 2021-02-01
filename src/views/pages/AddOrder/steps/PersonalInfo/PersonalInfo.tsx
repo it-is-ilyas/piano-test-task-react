@@ -1,21 +1,16 @@
 import Input from "components/Input";
-import React, { ChangeEvent, useContext } from "react";
-import { FormContext } from "../../AddOder";
-import { FormFieldType } from "../../types";
+import React, { useContext } from "react";
+import { FormContext } from "../../AddOrder";
 
 import "./PersonalInfo.scss";
 
 export interface PersonalInfoProps {}
 
 const PersonalInfo: React.FC<PersonalInfoProps> = () => {
-  const { values, errors, updateField } = useContext(FormContext);
+  const { values, errors, handleInputChange } = useContext(FormContext);
 
   const { firstName, secondName } = values;
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    updateField(name as keyof FormFieldType, value);
-  };
   return (
     <div className="PersonalInfo">
       <label htmlFor="firstName">First name</label>
@@ -24,7 +19,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = () => {
         id="firstName"
         name="firstName"
         value={firstName}
-        onChange={handleChange}
+        onChange={handleInputChange}
         error={errors.firstName}
       />
       <label htmlFor="secondName">Second name</label>
@@ -33,7 +28,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = () => {
         id="secondName"
         name="secondName"
         value={secondName}
-        onChange={handleChange}
+        onChange={handleInputChange}
         error={errors.secondName}
       />
     </div>

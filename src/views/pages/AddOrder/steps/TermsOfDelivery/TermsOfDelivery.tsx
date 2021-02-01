@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Checkbox from "components/Checkbox";
 
 import "./TermsOfDelivery.scss";
-import { FormContext } from "../../AddOder";
+import { FormContext } from "../../AddOrder";
 
 export interface TermsOfDeliveryProps {}
 

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FormContext } from "../../AddOder";
+import { FormContext } from "../../AddOrder";
 import "./ConfirmOrder.scss";
 
 export interface ConfirmOrderProps {}

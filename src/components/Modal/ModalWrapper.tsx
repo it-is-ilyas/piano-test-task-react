@@ -5,32 +5,22 @@ import classNames from "classnames";
 import "./Modal.scss";
 
 export const WRAPPER_ID: string = "modal-wrapper";
-// const WRAPPER_CLASS_NAME = "modal-wrapper";
 
 type ModalWrapperProps = {
   isOpen: boolean;
   children: ReactNode;
-  // toggle: () => void;
   className: string;
 };
 
 const ModalWrapper: React.FC<ModalWrapperProps> = ({
   isOpen = false,
   children = null,
-  // toggle,
+
   className = "",
 }) => {
-  //   const handleWrapperClick = (e) => {
-  //     if (e.target.className && e.target.className.includes(WRAPPER_CLASS_NAME))
-  //       toggle();
-
-  //     e.stopPropagation();
-  //   };
-
   return isOpen
     ? createPortal(
         <div
-          //   onClick={handleWrapperClick}
           // Fix scrolling elements beneath modal wrapper
           onWheel={(e) => e.stopPropagation()}
           id={WRAPPER_ID}

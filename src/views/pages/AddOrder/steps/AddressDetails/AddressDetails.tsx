@@ -1,28 +1,21 @@
 import Input from "components/Input";
-import React, { ChangeEvent, useContext } from "react";
-import { FormContext } from "../../AddOder";
-import { FormFieldType } from "../../types";
+import React, { useContext } from "react";
+import { FormContext } from "../../AddOrder";
 
 import "./AddressDetails.scss";
 
 export interface AddressDetailsProps {}
 
 const AddressDetails: React.FC<AddressDetailsProps> = () => {
-  const { values, errors, updateField } = useContext(FormContext);
+  const { values, errors, handleInputChange } = useContext(FormContext);
 
   const { city, street } = values;
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-
-    updateField(name as keyof FormFieldType, value);
-  };
 
   return (
     <div className="AddressDetails">
       <label htmlFor="city">City</label>
       <Input
-        onChange={handleChange}
+        onChange={handleInputChange}
         placeholder="Moscow"
         id="city"
         name="city"
@@ -31,7 +24,7 @@ const AddressDetails: React.FC<AddressDetailsProps> = () => {
       />
       <label htmlFor="street">Street</label>
       <Input
-        onChange={handleChange}
+        onChange={handleInputChange}
         placeholder="Lenina street"
         id="street"
         name="street"

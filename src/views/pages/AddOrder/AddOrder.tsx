@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import cn from "classnames";
 
 // Components
 import Button, { CircleButton } from "components/Button";
@@ -18,7 +19,7 @@ import { OrderType } from "store/ducks/orders/types.d";
 import { ADD_ORDER_STEPS_CONFIG } from "./config";
 
 //Assets
-import { closeIcon } from "assets/icons";
+import { closeIcon, arrowLeftIcon } from "assets/icons";
 
 //Styles
 import "./AddOrder.scss";
@@ -31,7 +32,13 @@ export const FormContext = React.createContext<{
   values: FormFieldType;
   errors: ErrorFieldType;
   updateField: (name: keyof FormFieldType, value: string | boolean) => void;
-}>({ values: {}, errors: {}, updateField: () => {} });
+  handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}>({
+  values: {},
+  errors: {},
+  updateField: () => {},
+  handleInputChange: () => {},
+});
 
 const AddOrder: React.FC<AddOrderProps> = ({ close }) => {
   const dispatch = useDispatch();
@@ -132,6 +139,15 @@ const AddOrder: React.FC<AddOrderProps> = ({ close }) => {
     []
   );
 
+  const handleInputChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = e.target;
+
+      updateField(name as keyof FormFieldType, value);
+    },
+    [updateField]
+  );
+
   const isNextStepDisabled: boolean =
     isSubmitting ||
     (typeof isNextStepBlocked === "function" && isNextStepBlocked(data));
@@ -139,6 +155,14 @@ const AddOrder: React.FC<AddOrderProps> = ({ close }) => {
   return (
     <div className="AddOrder">
       <div className="AddOrder__header">
+        <div
+          onClick={handlePrevStep}
+          className={cn("AddOrder__header-back-button", {
+            "AddOrder__header-back-button--hidden": !prevSteps.length,
+          })}
+        >
+          <img src={arrowLeftIcon} alt="" />
+        </div>
         <div className="AddOrder__headline">
           <span>{modalTitle || "Add Order"}</span>
           {title && (
@@ -150,7 +174,9 @@ const AddOrder: React.FC<AddOrderProps> = ({ close }) => {
         </CircleButton>
       </div>
       <div className="AddOrder__body">
-        <FormContext.Provider value={{ updateField, values: data, errors }}>
+        <FormContext.Provider
+          value={{ updateField, handleInputChange, values: data, errors }}
+        >
           <Component />
         </FormContext.Provider>
       </div>

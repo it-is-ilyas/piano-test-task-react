@@ -1,8 +1,8 @@
 import Api from "api";
 import Loader from "components/Loader";
 import RadioButton from "components/RadioButton";
-import React, { ChangeEvent, useContext, useEffect, useState } from "react";
-import { FormContext } from "../../AddOder";
+import React, { useContext, useEffect, useState } from "react";
+import { FormContext } from "../../AddOrder";
 
 import "./PickupPoints.scss";
 
@@ -27,14 +27,9 @@ const PickupPoints: React.FC<PickupPointsProps> = () => {
     getPoints();
   }, []);
 
-  const { values, updateField } = useContext(FormContext);
+  const { values, handleInputChange } = useContext(FormContext);
 
   const { pickupPoint } = values;
-
-  const handleOptionChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    updateField("pickupPoint", value);
-  };
 
   return (
     <div className="PickupPoints">
@@ -47,7 +42,7 @@ const PickupPoints: React.FC<PickupPointsProps> = () => {
             name="pickupPoint"
             value={option}
             checked={option === pickupPoint}
-            onChange={handleOptionChange}
+            onChange={handleInputChange}
           >
             {option}
           </RadioButton>

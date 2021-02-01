@@ -4,3 +4,4 @@ export { default as closeIcon } from "./close.svg";
 export { default as infoIcon } from "./info.svg";
 export { default as loaderIcon } from "./loader.svg";
 export { default as checkSuccessIcon } from "./check-success.svg";
+export { default as arrowLeftIcon } from "./arrow-left.svg";

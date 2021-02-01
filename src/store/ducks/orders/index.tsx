@@ -47,14 +47,4 @@ export const createOrder = (data: OrderType) => async (
   }
 };
 
-// export const createOrder = createAsyncThunk(
-//   "orders/create",
-//   // Declare the type your function argument here:
-//   async (data: OrderType) => {
-//     const response = await api.createOrder(data);
-//     // Inferred return type: Promise<MyData>
-//     return response;
-//   }
-// );
-
 export default orderSlice.reducer;

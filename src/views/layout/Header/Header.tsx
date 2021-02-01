@@ -1,13 +1,19 @@
 import * as React from "react";
+
+// Components
+import AddOrder from "views/pages/AddOrder";
+import Button from "components/Button";
+import Modal from "components/Modal";
+
+// Hooks
+import useModal from "hooks/useModal";
+
+// Assets
 import logoImg from "assets/images/logo.svg";
+import { plusIcon } from "assets/icons";
 
 //Styles
 import "./Header.scss";
-import Button from "components/Button";
-import { plusIcon } from "assets/icons";
-import Modal from "components/Modal";
-import AddOrder from "views/pages/AddOder";
-import useModal from "hooks/useModal";
 
 type HeaderProps = {};
 
@@ -29,7 +35,7 @@ const Header: React.FC<HeaderProps> = () => {
         Add order
         <img src={plusIcon} alt="" />
       </Button>
-      <Modal isOpen={isOpen} toggle={toggle}>
+      <Modal isOpen={isOpen}>
         <AddOrder close={toggle} />
       </Modal>
     </div>

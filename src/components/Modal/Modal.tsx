@@ -4,18 +4,12 @@ import ModalWrapper from "./ModalWrapper";
 export interface ModalProps {
   isOpen: boolean;
   children: ReactNode;
-  toggle?: () => void;
   className?: string;
 }
 
 const Modal: React.FC<ModalProps> = ({
-  // position = [-1, -1],
   isOpen = false,
-
   children = null,
-
-  toggle,
-
   className,
 }) => {
   return (

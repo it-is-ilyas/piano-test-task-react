@@ -1,23 +1,17 @@
-import React, { ChangeEvent, useContext } from "react";
+import React, { useContext } from "react";
 import Input from "components/Input";
+import { FormContext } from "../../AddOrder";
 
 import { infoIcon } from "assets/icons";
 
 import "./PhoneConfirmation.scss";
-import { FormContext } from "../../AddOder";
-import { FormFieldType } from "../../types";
 
 export interface PhoneConfirmationProps {}
 
 const PhoneConfirmation: React.FC<PhoneConfirmationProps> = () => {
-  const { values, errors, updateField } = useContext(FormContext);
+  const { values, errors, handleInputChange } = useContext(FormContext);
 
   const { phoneNumber, confirmationCode } = values;
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    updateField(name as keyof FormFieldType, value);
-  };
 
   return (
     <div className="PhoneConfirmation">
